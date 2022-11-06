@@ -1,0 +1,145 @@
+body {
+    overflow: hidden;
+}
+
+.add-new-material-form {
+    position: relative;
+    /* overflow-x: hidden; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.form-step {
+    position: absolute;
+    z-index: 1040;
+    /* display: none; */
+    opacity: 0;
+    width: 0%;
+    right: -20%;
+    -webkit-animation: rotateCustom .3s linear forwards;
+    -moz-animation: rotateCustom .3s linear forwards;
+    animation: rotateCustom .3s linear forwards;
+}
+
+@-moz-keyframes rotateCustom {
+    80%{
+        width: 50%;
+    }
+    100% {
+         opacity: 1;
+         width: 100%;
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotateCustom {
+    80%{
+        width: 50%;
+    }
+    100% {
+         opacity: 1;
+         width: 100%;
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCustom {
+    80%{
+        width: 50%;
+    }
+    100% {
+        overflow: visible;
+        opacity: 1;
+        width: 100%;
+        right: 0%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-hide {
+    animation: stepHide 1.5s forwards;
+    opacity: 0;
+}
+
+@keyframes stepHide {
+    0% {
+        opacity: 0.5;
+        left: 0%;
+        right: 0%;
+    }
+
+    50% {
+        left: 50%;
+        right: 50%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 110%;
+        right: 110%;
+        display: none;
+    }
+}
+
+.rotate-show {
+    /* display: flex; */
+    animation: stepShow .8s forwards;
+    top: 0px;
+    bottom: 0px;
+}
+
+@keyframes stepShow {
+    0% {
+        opacity: 0;
+        left: 50%;
+        right: 50%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0%;
+        right: 0%;
+        display: flex;
+    }
+}
+
+
+.position-relative {
+    position: relative !important;
+}
+
+
+/* scroll */
+.overflow-y-custom {
+    overflow-y: scroll;
+    mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 17px, black 17px);
+    mask-size: 100% 20000px;
+    mask-position: left bottom;
+    -webkit-mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 17px, black 17px);
+    -webkit-mask-size: 100% 20000px;
+    -webkit-mask-position: left bottom;
+    transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+.overflow-y-custom:hover {
+    -webkit-mask-position: left top;
+}
+
+::-webkit-scrollbar {
+    background: #f4f6f9;
+    border-radius: 4px;
+    height: 8px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #21BB9A;
+    border-radius: 4px;
+}
+
+/* end scroll */

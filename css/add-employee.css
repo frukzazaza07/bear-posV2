@@ -1,0 +1,110 @@
+body {
+    overflow: hidden;
+}
+
+.add-new-employee-form {
+    position: relative;
+    height: 500px;
+}
+
+.form-step {
+    position: absolute;
+    z-index: 1040;
+    /* display: none; */
+    opacity: 1;
+
+}
+
+.step-show {
+    position: relative;
+    -webkit-animation: zoomShow .6s linear forwards;
+    -moz-animation: zoomShow .6s linear forwards;
+    animation: zoomShow .6s linear forwards;
+}
+
+@keyframes zoomShow {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        -ms-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        -ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        -ms-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+.position-relative {
+    position: relative !important;
+}
+
+
+/* scroll */
+.overflow-y-custom {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 17px, black 17px);
+    mask-size: 100% 20000px;
+    mask-position: left bottom;
+    -webkit-mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 17px, black 17px);
+    -webkit-mask-size: 100% 20000px;
+    -webkit-mask-position: left bottom;
+    transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+.overflow-y-custom:hover {
+    -webkit-mask-position: left top;
+}
+
+::-webkit-scrollbar {
+    background: #f4f6f9;
+    border-radius: 4px;
+    height: 8px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #21BB9A;
+    border-radius: 4px;
+}
+
+/* end scroll */
+
+.product-preview-container {
+    width: 100%;
+    height: auto;
+}
+
+.product-preview-img {
+    max-width: 100%;
+    max-height: 400px;
+}

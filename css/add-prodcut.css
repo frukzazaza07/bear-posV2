@@ -1,0 +1,128 @@
+body {
+    overflow: hidden;
+}
+
+.add-new-product-form {
+    position: relative;
+    /* overflow-x: hidden; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.form-step {
+    position: absolute;
+    z-index: 1040;
+    /* display: none; */
+}
+
+.step-hide {
+    animation: stepHide 1.5s forwards;
+    opacity: 0;
+}
+
+@keyframes stepHide {
+    0% {
+        opacity: 0.5;
+        left: 0%;
+        right: 0%;
+    }
+
+    50% {
+        left: 50%;
+        right: 50%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 110%;
+        right: 110%;
+        display: none;
+    }
+}
+
+.step-show {
+    /* display: flex; */
+    animation: stepShow .8s forwards;
+    top: 0px;
+    bottom: 0px;
+}
+
+@keyframes stepShow {
+    0% {
+        opacity: 0;
+        left: 50%;
+        right: 50%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0%;
+        right: 0%;
+        display: flex;
+    }
+}
+
+.step2-li-action {
+    border-radius: 5px;
+    padding: .1rem .5rem;
+    background-color: wheat;
+    border: 1px solid slategrey;
+    transition: 0.3s ease-in-out;
+}
+
+.step2-li-action:nth-child(2):hover {
+    opacity: 0.7;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.materialList-container {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid green;
+    padding-top: .5rem;
+}
+
+/* scroll */
+.overflow-y-custom {
+    overflow-y: scroll;
+    mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 17px, black 17px);
+    mask-size: 100% 20000px;
+    mask-position: left bottom;
+    -webkit-mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 17px, black 17px);
+    -webkit-mask-size: 100% 20000px;
+    -webkit-mask-position: left bottom;
+    transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+.overflow-y-custom:hover {
+    -webkit-mask-position: left top;
+}
+
+::-webkit-scrollbar {
+    background: #f4f6f9;
+    border-radius: 4px;
+    height: 8px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #21BB9A;
+    border-radius: 4px;
+}
+
+/* end scroll */
+
+.product-preview-container{
+    width: 100%;
+    height: auto;
+}
+.product-preview-img{
+    max-width: 100%;
+    max-height: 400px;
+}
